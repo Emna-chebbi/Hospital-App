@@ -22,8 +22,12 @@
                                name="id" th:value="${patient.id}" readonly>
                     </div>
                     <div class="mb-3">
+                        <label for="nom" class="form-label">Nom</label>
+                        <input class="form-control" type="text" name="nom" id="nom" placeholder="enter name" th:value="${patient.nom}">
+                    </div>
+                    <div class="mb-3">
                         <label for="Date Naissance" class="form-label">Date Naissance</label>
-                        <input class="form-control" type="Date" name="Date Naissance" id="Date Naissance" placeholder="enter Date" th:value="${patient.dateNaissance}">
+                        <input class="form-control" type="date" name="dateNaissance" id="Date Naissance" placeholder="enter Date" th:value="${patient.dateNaissance}">
                     </div>
                     <div  class="mb-3">
                         <label for="malade" class="form-label">malade</label>

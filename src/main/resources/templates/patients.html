@@ -31,7 +31,8 @@
                         <th>Date de naissance</th>
                         <th>Malade</th>
                         <th>Score</th>
-                        <th>Action</th>
+                        <th>DELETE</th>
+                        <th>EDIT</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -48,9 +49,11 @@
                                class="btn btn-danger">
                                 <i class="bi bi-trash"></i>
                             </a>
-                            <a onclick="javascript:return confirm('Voulez-vous modifier cet élément ?')"
-                               th:href="@{update(id=${p.id}, keyword=${keyword}, page=${currentPage})}"
-                               class="btn btn-warning">
+                        </td>
+
+                        <td>
+                            <a th:href="@{editPatient(id=${p.id},keyword=${keyword}, page=${currentPage})}"
+                            class="btn btn-primary">
                                 <i class="bi bi-pencil"></i>
                             </a>
                         </td>

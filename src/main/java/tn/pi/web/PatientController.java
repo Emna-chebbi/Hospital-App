@@ -1,5 +1,6 @@
 package tn.pi.web;
 
+import groovy.util.logging.Slf4j;
 import jakarta.persistence.Id;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
@@ -16,7 +17,9 @@ import tn.pi.repositories.PatientRepository;
 import javax.naming.Binding;
 import java.util.List;
 
+@lombok.extern.slf4j.Slf4j
 @Controller
+@Slf4j
 public class PatientController {
 
     private final PatientRepository patientRepository; //k t3ml final par obligation t3ml constructeur
@@ -55,9 +58,10 @@ public class PatientController {
     public String savePatient(Model model, @Valid Patient patient , BindingResult bindingResult){
         if(bindingResult.hasErrors())
             return "formPatient";
+        log.info("the patient is : "+patient.toString());
         patientRepository.save(patient);
         model.addAttribute("patient" , new Patient());
-        return "formPatient";
+        return "redirect:/index";
     }
     @GetMapping("/editPatient")
     public String editPatient(Model model,

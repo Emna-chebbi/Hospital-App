@@ -10,7 +10,7 @@ import java.time.LocalDate;
 
 @Entity
 @Setter @Getter @NoArgsConstructor
-@AllArgsConstructor @Builder
+@AllArgsConstructor @ToString @Builder
 
 public class Patient {
     @Id
